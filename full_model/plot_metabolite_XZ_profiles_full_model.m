@@ -9,6 +9,8 @@ load('CWdata_XZ137_full_model')
     x = data_C(:,1) ; y = data_C(:,2) ; 
     
     days_considered=[1,3,7];
+    
+   
    %% 
     for k=1:length(days_considered) %looping over the days
         C_val = data_C(:,2+k) ; W_val = data_W(:,2+k);
@@ -33,11 +35,12 @@ colormap viridis
 colorbar
 shg
 ax = gca;
-xlabel('horizontal position, $X$','Interpreter','latex', 'fontsize',24)
-ylabel('vertical position, $Z$','interpreter','latex','fontsize',24)
+ax.FontSize = 14;
+xlabel('horizontal position, $x/ L$','Interpreter','latex', 'fontsize',24)
+ylabel('vertical position, $z/\epsilon L$','interpreter','latex','fontsize',24)
 
 % titles
-title({sprintf('Glucose concentration at t=%d',days_considered(k))} ,'Fontsize',14); %, 'interpreter','latex');
+%title({sprintf('Glucose concentration at t=%d',days_considered(k))} ,'Fontsize',14); %, 'interpreter','latex');
 
 set(gcf, 'Position',  [100, 100, 600, 500])
 
@@ -53,12 +56,12 @@ shading interp
 colormap viridis
 colorbar
 shg
-title({sprintf('Lactate concentration at t=%d',days_considered(k))} ,'Fontsize',14); %, 'interpreter','latex');
+%title({sprintf('Lactate concentration at t=%d',days_considered(k))} ,'Fontsize',14); %, 'interpreter','latex');
 
 ax = gca;
 ax.FontSize = 14;
-xlabel('horizontal position, $X$','Interpreter','latex', 'fontsize',24)
-ylabel('vertical position, $Z$','interpreter','latex','fontsize',24)
+xlabel('horizontal position, $x/L$','Interpreter','latex', 'fontsize',24)
+ylabel('vertical position, $z/\epsilon L$','interpreter','latex','fontsize',24)
 shg
 set(gcf, 'Position',  [100, 100, 600, 500])
 
